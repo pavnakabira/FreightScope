@@ -1,0 +1,1892 @@
+[
+  {
+    "date_made": "2026-09-19",
+    "index": "BPI",
+    "horizon_date": "2026-09-21",
+    "predicted": 122.7,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-19",
+    "index": "BPI",
+    "horizon_date": "2026-09-22",
+    "predicted": 124.2,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-19",
+    "index": "BPI",
+    "horizon_date": "2026-09-23",
+    "predicted": 124.6,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-19",
+    "index": "BPI",
+    "horizon_date": "2026-09-24",
+    "predicted": 124.8,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-19",
+    "index": "BPI",
+    "horizon_date": "2026-09-25",
+    "predicted": 125.6,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-19",
+    "index": "BPI",
+    "horizon_date": "2026-09-28",
+    "predicted": 125.3,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-19",
+    "index": "BPI",
+    "horizon_date": "2026-09-29",
+    "predicted": 126.9,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-19",
+    "index": "BPI",
+    "horizon_date": "2026-09-30",
+    "predicted": 127.2,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-19",
+    "index": "BPI",
+    "horizon_date": "2026-10-01",
+    "predicted": 127.4,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-19",
+    "index": "BPI",
+    "horizon_date": "2026-10-02",
+    "predicted": 128.2,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-19",
+    "index": "BPI",
+    "horizon_date": "2026-10-05",
+    "predicted": 128.0,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-19",
+    "index": "BPI",
+    "horizon_date": "2026-10-06",
+    "predicted": 129.5,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-19",
+    "index": "BPI",
+    "horizon_date": "2026-10-07",
+    "predicted": 129.8,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-19",
+    "index": "BPI",
+    "horizon_date": "2026-10-08",
+    "predicted": 130.1,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-19",
+    "index": "BPI",
+    "horizon_date": "2026-10-09",
+    "predicted": 130.8,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-19",
+    "index": "BPI",
+    "horizon_date": "2026-10-12",
+    "predicted": 130.6,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-19",
+    "index": "BPI",
+    "horizon_date": "2026-10-13",
+    "predicted": 132.1,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-19",
+    "index": "BPI",
+    "horizon_date": "2026-10-14",
+    "predicted": 132.5,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-19",
+    "index": "BPI",
+    "horizon_date": "2026-10-15",
+    "predicted": 132.7,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-19",
+    "index": "BPI",
+    "horizon_date": "2026-10-16",
+    "predicted": 133.5,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-19",
+    "index": "BPI",
+    "horizon_date": "2026-10-19",
+    "predicted": 133.2,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-19",
+    "index": "BPI",
+    "horizon_date": "2026-10-20",
+    "predicted": 134.8,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-19",
+    "index": "BPI",
+    "horizon_date": "2026-10-21",
+    "predicted": 135.1,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-19",
+    "index": "BPI",
+    "horizon_date": "2026-10-22",
+    "predicted": 135.3,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-19",
+    "index": "BPI",
+    "horizon_date": "2026-10-23",
+    "predicted": 136.1,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-19",
+    "index": "BPI",
+    "horizon_date": "2026-10-26",
+    "predicted": 135.9,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-19",
+    "index": "BPI",
+    "horizon_date": "2026-10-27",
+    "predicted": 137.4,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-19",
+    "index": "BPI",
+    "horizon_date": "2026-10-28",
+    "predicted": 137.7,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-19",
+    "index": "BPI",
+    "horizon_date": "2026-10-29",
+    "predicted": 138.0,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-19",
+    "index": "BPI",
+    "horizon_date": "2026-10-30",
+    "predicted": 138.7,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-19",
+    "index": "BPI",
+    "horizon_date": "2026-11-02",
+    "predicted": 138.5,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-19",
+    "index": "BPI",
+    "horizon_date": "2026-11-03",
+    "predicted": 140.0,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-19",
+    "index": "BPI",
+    "horizon_date": "2026-11-04",
+    "predicted": 140.4,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-19",
+    "index": "BPI",
+    "horizon_date": "2026-11-05",
+    "predicted": 140.6,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-19",
+    "index": "BPI",
+    "horizon_date": "2026-11-06",
+    "predicted": 141.4,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-19",
+    "index": "BPI",
+    "horizon_date": "2026-11-09",
+    "predicted": 141.1,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-19",
+    "index": "BPI",
+    "horizon_date": "2026-11-10",
+    "predicted": 142.7,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-19",
+    "index": "BPI",
+    "horizon_date": "2026-11-11",
+    "predicted": 143.0,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-19",
+    "index": "BPI",
+    "horizon_date": "2026-11-12",
+    "predicted": 143.2,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-19",
+    "index": "BPI",
+    "horizon_date": "2026-11-13",
+    "predicted": 144.0,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-19",
+    "index": "BPI",
+    "horizon_date": "2026-11-16",
+    "predicted": 143.8,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-19",
+    "index": "BPI",
+    "horizon_date": "2026-11-17",
+    "predicted": 145.3,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-19",
+    "index": "BPI",
+    "horizon_date": "2026-11-18",
+    "predicted": 145.6,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-19",
+    "index": "BPI",
+    "horizon_date": "2026-11-19",
+    "predicted": 145.9,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-19",
+    "index": "BPI",
+    "horizon_date": "2026-11-20",
+    "predicted": 146.6,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-19",
+    "index": "BCI",
+    "horizon_date": "2026-09-21",
+    "predicted": 214.2,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-19",
+    "index": "BCI",
+    "horizon_date": "2026-09-22",
+    "predicted": 216.9,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-19",
+    "index": "BCI",
+    "horizon_date": "2026-09-23",
+    "predicted": 217.4,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-19",
+    "index": "BCI",
+    "horizon_date": "2026-09-24",
+    "predicted": 217.9,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-19",
+    "index": "BCI",
+    "horizon_date": "2026-09-25",
+    "predicted": 219.2,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-19",
+    "index": "BCI",
+    "horizon_date": "2026-09-28",
+    "predicted": 218.7,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-19",
+    "index": "BCI",
+    "horizon_date": "2026-09-29",
+    "predicted": 221.4,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-19",
+    "index": "BCI",
+    "horizon_date": "2026-09-30",
+    "predicted": 222.0,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-19",
+    "index": "BCI",
+    "horizon_date": "2026-10-01",
+    "predicted": 222.4,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-19",
+    "index": "BCI",
+    "horizon_date": "2026-10-02",
+    "predicted": 223.7,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-19",
+    "index": "BCI",
+    "horizon_date": "2026-10-05",
+    "predicted": 223.2,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-19",
+    "index": "BCI",
+    "horizon_date": "2026-10-06",
+    "predicted": 226.0,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-19",
+    "index": "BCI",
+    "horizon_date": "2026-10-07",
+    "predicted": 226.5,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-19",
+    "index": "BCI",
+    "horizon_date": "2026-10-08",
+    "predicted": 226.9,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-19",
+    "index": "BCI",
+    "horizon_date": "2026-10-09",
+    "predicted": 228.3,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-19",
+    "index": "BCI",
+    "horizon_date": "2026-10-12",
+    "predicted": 227.8,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-19",
+    "index": "BCI",
+    "horizon_date": "2026-10-13",
+    "predicted": 230.5,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-19",
+    "index": "BCI",
+    "horizon_date": "2026-10-14",
+    "predicted": 231.0,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-19",
+    "index": "BCI",
+    "horizon_date": "2026-10-15",
+    "predicted": 231.4,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-19",
+    "index": "BCI",
+    "horizon_date": "2026-10-16",
+    "predicted": 232.8,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-19",
+    "index": "BCI",
+    "horizon_date": "2026-10-19",
+    "predicted": 232.3,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-19",
+    "index": "BCI",
+    "horizon_date": "2026-10-20",
+    "predicted": 235.0,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-19",
+    "index": "BCI",
+    "horizon_date": "2026-10-21",
+    "predicted": 235.5,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-19",
+    "index": "BCI",
+    "horizon_date": "2026-10-22",
+    "predicted": 236.0,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-19",
+    "index": "BCI",
+    "horizon_date": "2026-10-23",
+    "predicted": 237.3,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-19",
+    "index": "BCI",
+    "horizon_date": "2026-10-26",
+    "predicted": 236.8,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-19",
+    "index": "BCI",
+    "horizon_date": "2026-10-27",
+    "predicted": 239.5,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-19",
+    "index": "BCI",
+    "horizon_date": "2026-10-28",
+    "predicted": 240.1,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-19",
+    "index": "BCI",
+    "horizon_date": "2026-10-29",
+    "predicted": 240.5,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-19",
+    "index": "BCI",
+    "horizon_date": "2026-10-30",
+    "predicted": 241.8,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-19",
+    "index": "BCI",
+    "horizon_date": "2026-11-02",
+    "predicted": 241.4,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-19",
+    "index": "BCI",
+    "horizon_date": "2026-11-03",
+    "predicted": 244.1,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-19",
+    "index": "BCI",
+    "horizon_date": "2026-11-04",
+    "predicted": 244.6,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-19",
+    "index": "BCI",
+    "horizon_date": "2026-11-05",
+    "predicted": 245.0,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-19",
+    "index": "BCI",
+    "horizon_date": "2026-11-06",
+    "predicted": 246.4,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-19",
+    "index": "BCI",
+    "horizon_date": "2026-11-09",
+    "predicted": 245.9,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-19",
+    "index": "BCI",
+    "horizon_date": "2026-11-10",
+    "predicted": 248.6,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-19",
+    "index": "BCI",
+    "horizon_date": "2026-11-11",
+    "predicted": 249.1,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-19",
+    "index": "BCI",
+    "horizon_date": "2026-11-12",
+    "predicted": 249.6,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-19",
+    "index": "BCI",
+    "horizon_date": "2026-11-13",
+    "predicted": 250.9,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-19",
+    "index": "BCI",
+    "horizon_date": "2026-11-16",
+    "predicted": 250.4,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-19",
+    "index": "BCI",
+    "horizon_date": "2026-11-17",
+    "predicted": 253.1,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-19",
+    "index": "BCI",
+    "horizon_date": "2026-11-18",
+    "predicted": 253.6,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-19",
+    "index": "BCI",
+    "horizon_date": "2026-11-19",
+    "predicted": 254.1,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-19",
+    "index": "BCI",
+    "horizon_date": "2026-11-20",
+    "predicted": 255.4,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BPI",
+    "horizon_date": "2026-09-21",
+    "predicted": 122.7,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BPI",
+    "horizon_date": "2026-09-22",
+    "predicted": 124.2,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BPI",
+    "horizon_date": "2026-09-23",
+    "predicted": 124.6,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BPI",
+    "horizon_date": "2026-09-24",
+    "predicted": 124.8,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BPI",
+    "horizon_date": "2026-09-25",
+    "predicted": 125.6,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BPI",
+    "horizon_date": "2026-09-28",
+    "predicted": 125.3,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BPI",
+    "horizon_date": "2026-09-29",
+    "predicted": 126.9,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BPI",
+    "horizon_date": "2026-09-30",
+    "predicted": 127.2,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BPI",
+    "horizon_date": "2026-10-01",
+    "predicted": 127.4,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BPI",
+    "horizon_date": "2026-10-02",
+    "predicted": 128.2,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BPI",
+    "horizon_date": "2026-10-05",
+    "predicted": 128.0,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BPI",
+    "horizon_date": "2026-10-06",
+    "predicted": 129.5,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BPI",
+    "horizon_date": "2026-10-07",
+    "predicted": 129.8,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BPI",
+    "horizon_date": "2026-10-08",
+    "predicted": 130.1,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BPI",
+    "horizon_date": "2026-10-09",
+    "predicted": 130.8,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BPI",
+    "horizon_date": "2026-10-12",
+    "predicted": 130.6,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BPI",
+    "horizon_date": "2026-10-13",
+    "predicted": 132.1,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BPI",
+    "horizon_date": "2026-10-14",
+    "predicted": 132.5,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BPI",
+    "horizon_date": "2026-10-15",
+    "predicted": 132.7,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BPI",
+    "horizon_date": "2026-10-16",
+    "predicted": 133.5,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BPI",
+    "horizon_date": "2026-10-19",
+    "predicted": 133.2,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BPI",
+    "horizon_date": "2026-10-20",
+    "predicted": 134.8,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BPI",
+    "horizon_date": "2026-10-21",
+    "predicted": 135.1,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BPI",
+    "horizon_date": "2026-10-22",
+    "predicted": 135.3,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BPI",
+    "horizon_date": "2026-10-23",
+    "predicted": 136.1,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BPI",
+    "horizon_date": "2026-10-26",
+    "predicted": 135.9,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BPI",
+    "horizon_date": "2026-10-27",
+    "predicted": 137.4,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BPI",
+    "horizon_date": "2026-10-28",
+    "predicted": 137.7,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BPI",
+    "horizon_date": "2026-10-29",
+    "predicted": 138.0,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BPI",
+    "horizon_date": "2026-10-30",
+    "predicted": 138.7,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BPI",
+    "horizon_date": "2026-11-02",
+    "predicted": 138.5,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BPI",
+    "horizon_date": "2026-11-03",
+    "predicted": 140.0,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BPI",
+    "horizon_date": "2026-11-04",
+    "predicted": 140.4,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BPI",
+    "horizon_date": "2026-11-05",
+    "predicted": 140.6,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BPI",
+    "horizon_date": "2026-11-06",
+    "predicted": 141.4,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BPI",
+    "horizon_date": "2026-11-09",
+    "predicted": 141.1,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BPI",
+    "horizon_date": "2026-11-10",
+    "predicted": 142.7,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BPI",
+    "horizon_date": "2026-11-11",
+    "predicted": 143.0,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BPI",
+    "horizon_date": "2026-11-12",
+    "predicted": 143.2,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BPI",
+    "horizon_date": "2026-11-13",
+    "predicted": 144.0,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BPI",
+    "horizon_date": "2026-11-16",
+    "predicted": 143.8,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BPI",
+    "horizon_date": "2026-11-17",
+    "predicted": 145.3,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BPI",
+    "horizon_date": "2026-11-18",
+    "predicted": 145.6,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BPI",
+    "horizon_date": "2026-11-19",
+    "predicted": 145.9,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BPI",
+    "horizon_date": "2026-11-20",
+    "predicted": 146.6,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BSI",
+    "horizon_date": "2026-09-21",
+    "predicted": 97.0,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BSI",
+    "horizon_date": "2026-09-22",
+    "predicted": 98.2,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BSI",
+    "horizon_date": "2026-09-23",
+    "predicted": 98.4,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BSI",
+    "horizon_date": "2026-09-24",
+    "predicted": 98.6,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BSI",
+    "horizon_date": "2026-09-25",
+    "predicted": 99.2,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BSI",
+    "horizon_date": "2026-09-28",
+    "predicted": 99.0,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BSI",
+    "horizon_date": "2026-09-29",
+    "predicted": 100.2,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BSI",
+    "horizon_date": "2026-09-30",
+    "predicted": 100.4,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BSI",
+    "horizon_date": "2026-10-01",
+    "predicted": 100.7,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BSI",
+    "horizon_date": "2026-10-02",
+    "predicted": 101.3,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BSI",
+    "horizon_date": "2026-10-05",
+    "predicted": 101.1,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BSI",
+    "horizon_date": "2026-10-06",
+    "predicted": 102.3,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BSI",
+    "horizon_date": "2026-10-07",
+    "predicted": 102.5,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BSI",
+    "horizon_date": "2026-10-08",
+    "predicted": 102.7,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BSI",
+    "horizon_date": "2026-10-09",
+    "predicted": 103.3,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BSI",
+    "horizon_date": "2026-10-12",
+    "predicted": 103.1,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BSI",
+    "horizon_date": "2026-10-13",
+    "predicted": 104.3,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BSI",
+    "horizon_date": "2026-10-14",
+    "predicted": 104.5,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BSI",
+    "horizon_date": "2026-10-15",
+    "predicted": 104.8,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BSI",
+    "horizon_date": "2026-10-16",
+    "predicted": 105.4,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BSI",
+    "horizon_date": "2026-10-19",
+    "predicted": 105.2,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BSI",
+    "horizon_date": "2026-10-20",
+    "predicted": 106.4,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BSI",
+    "horizon_date": "2026-10-21",
+    "predicted": 106.6,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BSI",
+    "horizon_date": "2026-10-22",
+    "predicted": 106.8,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BSI",
+    "horizon_date": "2026-10-23",
+    "predicted": 107.4,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BSI",
+    "horizon_date": "2026-10-26",
+    "predicted": 107.2,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BSI",
+    "horizon_date": "2026-10-27",
+    "predicted": 108.4,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BSI",
+    "horizon_date": "2026-10-28",
+    "predicted": 108.6,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BSI",
+    "horizon_date": "2026-10-29",
+    "predicted": 108.9,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BSI",
+    "horizon_date": "2026-10-30",
+    "predicted": 109.5,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BSI",
+    "horizon_date": "2026-11-02",
+    "predicted": 109.3,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BSI",
+    "horizon_date": "2026-11-03",
+    "predicted": 110.5,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BSI",
+    "horizon_date": "2026-11-04",
+    "predicted": 110.7,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BSI",
+    "horizon_date": "2026-11-05",
+    "predicted": 110.9,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BSI",
+    "horizon_date": "2026-11-06",
+    "predicted": 111.5,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BSI",
+    "horizon_date": "2026-11-09",
+    "predicted": 111.3,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BSI",
+    "horizon_date": "2026-11-10",
+    "predicted": 112.5,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BSI",
+    "horizon_date": "2026-11-11",
+    "predicted": 112.7,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BSI",
+    "horizon_date": "2026-11-12",
+    "predicted": 113.0,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BSI",
+    "horizon_date": "2026-11-13",
+    "predicted": 113.6,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BSI",
+    "horizon_date": "2026-11-16",
+    "predicted": 113.4,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BSI",
+    "horizon_date": "2026-11-17",
+    "predicted": 114.6,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BSI",
+    "horizon_date": "2026-11-18",
+    "predicted": 114.8,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BSI",
+    "horizon_date": "2026-11-19",
+    "predicted": 115.0,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BSI",
+    "horizon_date": "2026-11-20",
+    "predicted": 115.6,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BCI",
+    "horizon_date": "2026-09-21",
+    "predicted": 214.2,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BCI",
+    "horizon_date": "2026-09-22",
+    "predicted": 216.9,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BCI",
+    "horizon_date": "2026-09-23",
+    "predicted": 217.4,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BCI",
+    "horizon_date": "2026-09-24",
+    "predicted": 217.9,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BCI",
+    "horizon_date": "2026-09-25",
+    "predicted": 219.2,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BCI",
+    "horizon_date": "2026-09-28",
+    "predicted": 218.7,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BCI",
+    "horizon_date": "2026-09-29",
+    "predicted": 221.4,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BCI",
+    "horizon_date": "2026-09-30",
+    "predicted": 222.0,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BCI",
+    "horizon_date": "2026-10-01",
+    "predicted": 222.4,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BCI",
+    "horizon_date": "2026-10-02",
+    "predicted": 223.7,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BCI",
+    "horizon_date": "2026-10-05",
+    "predicted": 223.2,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BCI",
+    "horizon_date": "2026-10-06",
+    "predicted": 226.0,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BCI",
+    "horizon_date": "2026-10-07",
+    "predicted": 226.5,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BCI",
+    "horizon_date": "2026-10-08",
+    "predicted": 226.9,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BCI",
+    "horizon_date": "2026-10-09",
+    "predicted": 228.3,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BCI",
+    "horizon_date": "2026-10-12",
+    "predicted": 227.8,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BCI",
+    "horizon_date": "2026-10-13",
+    "predicted": 230.5,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BCI",
+    "horizon_date": "2026-10-14",
+    "predicted": 231.0,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BCI",
+    "horizon_date": "2026-10-15",
+    "predicted": 231.4,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BCI",
+    "horizon_date": "2026-10-16",
+    "predicted": 232.8,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BCI",
+    "horizon_date": "2026-10-19",
+    "predicted": 232.3,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BCI",
+    "horizon_date": "2026-10-20",
+    "predicted": 235.0,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BCI",
+    "horizon_date": "2026-10-21",
+    "predicted": 235.5,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BCI",
+    "horizon_date": "2026-10-22",
+    "predicted": 236.0,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BCI",
+    "horizon_date": "2026-10-23",
+    "predicted": 237.3,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BCI",
+    "horizon_date": "2026-10-26",
+    "predicted": 236.8,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BCI",
+    "horizon_date": "2026-10-27",
+    "predicted": 239.5,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BCI",
+    "horizon_date": "2026-10-28",
+    "predicted": 240.1,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BCI",
+    "horizon_date": "2026-10-29",
+    "predicted": 240.5,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BCI",
+    "horizon_date": "2026-10-30",
+    "predicted": 241.8,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BCI",
+    "horizon_date": "2026-11-02",
+    "predicted": 241.4,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BCI",
+    "horizon_date": "2026-11-03",
+    "predicted": 244.1,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BCI",
+    "horizon_date": "2026-11-04",
+    "predicted": 244.6,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BCI",
+    "horizon_date": "2026-11-05",
+    "predicted": 245.0,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BCI",
+    "horizon_date": "2026-11-06",
+    "predicted": 246.4,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BCI",
+    "horizon_date": "2026-11-09",
+    "predicted": 245.9,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BCI",
+    "horizon_date": "2026-11-10",
+    "predicted": 248.6,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BCI",
+    "horizon_date": "2026-11-11",
+    "predicted": 249.1,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BCI",
+    "horizon_date": "2026-11-12",
+    "predicted": 249.6,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BCI",
+    "horizon_date": "2026-11-13",
+    "predicted": 250.9,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BCI",
+    "horizon_date": "2026-11-16",
+    "predicted": 250.4,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BCI",
+    "horizon_date": "2026-11-17",
+    "predicted": 253.1,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BCI",
+    "horizon_date": "2026-11-18",
+    "predicted": 253.6,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BCI",
+    "horizon_date": "2026-11-19",
+    "predicted": 254.1,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-20",
+    "index": "BCI",
+    "horizon_date": "2026-11-20",
+    "predicted": 255.4,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-28",
+    "index": "BPI",
+    "horizon_date": "2026-09-28",
+    "predicted": 122.6,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-28",
+    "index": "BPI",
+    "horizon_date": "2026-09-29",
+    "predicted": 124.0,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-28",
+    "index": "BPI",
+    "horizon_date": "2026-09-30",
+    "predicted": 124.5,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-28",
+    "index": "BPI",
+    "horizon_date": "2026-10-01",
+    "predicted": 124.3,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-28",
+    "index": "BPI",
+    "horizon_date": "2026-10-02",
+    "predicted": 125.1,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-28",
+    "index": "BPI",
+    "horizon_date": "2026-10-05",
+    "predicted": 125.1,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-28",
+    "index": "BPI",
+    "horizon_date": "2026-10-06",
+    "predicted": 126.4,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-28",
+    "index": "BPI",
+    "horizon_date": "2026-10-07",
+    "predicted": 126.9,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-28",
+    "index": "BPI",
+    "horizon_date": "2026-10-08",
+    "predicted": 126.8,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-28",
+    "index": "BPI",
+    "horizon_date": "2026-10-09",
+    "predicted": 127.6,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-28",
+    "index": "BPI",
+    "horizon_date": "2026-10-12",
+    "predicted": 127.6,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-28",
+    "index": "BPI",
+    "horizon_date": "2026-10-13",
+    "predicted": 128.9,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-28",
+    "index": "BPI",
+    "horizon_date": "2026-10-14",
+    "predicted": 129.4,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-28",
+    "index": "BPI",
+    "horizon_date": "2026-10-15",
+    "predicted": 129.2,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-28",
+    "index": "BPI",
+    "horizon_date": "2026-10-16",
+    "predicted": 130.1,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-28",
+    "index": "BPI",
+    "horizon_date": "2026-10-19",
+    "predicted": 130.0,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-28",
+    "index": "BPI",
+    "horizon_date": "2026-10-20",
+    "predicted": 131.4,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-28",
+    "index": "BPI",
+    "horizon_date": "2026-10-21",
+    "predicted": 131.9,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-28",
+    "index": "BPI",
+    "horizon_date": "2026-10-22",
+    "predicted": 131.7,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-28",
+    "index": "BPI",
+    "horizon_date": "2026-10-23",
+    "predicted": 132.5,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-28",
+    "index": "BPI",
+    "horizon_date": "2026-10-26",
+    "predicted": 132.5,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-28",
+    "index": "BPI",
+    "horizon_date": "2026-10-27",
+    "predicted": 133.8,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-28",
+    "index": "BPI",
+    "horizon_date": "2026-10-28",
+    "predicted": 134.3,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-28",
+    "index": "BPI",
+    "horizon_date": "2026-10-29",
+    "predicted": 134.1,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-28",
+    "index": "BPI",
+    "horizon_date": "2026-10-30",
+    "predicted": 135.0,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-28",
+    "index": "BPI",
+    "horizon_date": "2026-11-02",
+    "predicted": 135.0,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-28",
+    "index": "BPI",
+    "horizon_date": "2026-11-03",
+    "predicted": 136.3,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-28",
+    "index": "BPI",
+    "horizon_date": "2026-11-04",
+    "predicted": 136.8,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-28",
+    "index": "BPI",
+    "horizon_date": "2026-11-05",
+    "predicted": 136.6,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-28",
+    "index": "BPI",
+    "horizon_date": "2026-11-06",
+    "predicted": 137.5,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-28",
+    "index": "BPI",
+    "horizon_date": "2026-11-09",
+    "predicted": 137.4,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-28",
+    "index": "BPI",
+    "horizon_date": "2026-11-10",
+    "predicted": 138.8,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-28",
+    "index": "BPI",
+    "horizon_date": "2026-11-11",
+    "predicted": 139.3,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-28",
+    "index": "BPI",
+    "horizon_date": "2026-11-12",
+    "predicted": 139.1,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-28",
+    "index": "BPI",
+    "horizon_date": "2026-11-13",
+    "predicted": 139.9,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-28",
+    "index": "BPI",
+    "horizon_date": "2026-11-16",
+    "predicted": 139.9,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-28",
+    "index": "BPI",
+    "horizon_date": "2026-11-17",
+    "predicted": 141.2,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-28",
+    "index": "BPI",
+    "horizon_date": "2026-11-18",
+    "predicted": 141.7,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-28",
+    "index": "BPI",
+    "horizon_date": "2026-11-19",
+    "predicted": 141.5,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-28",
+    "index": "BPI",
+    "horizon_date": "2026-11-20",
+    "predicted": 142.4,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-28",
+    "index": "BPI",
+    "horizon_date": "2026-11-23",
+    "predicted": 142.4,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-28",
+    "index": "BPI",
+    "horizon_date": "2026-11-24",
+    "predicted": 143.7,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-28",
+    "index": "BPI",
+    "horizon_date": "2026-11-25",
+    "predicted": 144.2,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-28",
+    "index": "BPI",
+    "horizon_date": "2026-11-26",
+    "predicted": 144.0,
+    "actual": null
+  },
+  {
+    "date_made": "2026-09-28",
+    "index": "BPI",
+    "horizon_date": "2026-11-27",
+    "predicted": 144.9,
+    "actual": null
+  }
+]

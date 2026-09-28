@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FreightScope — Live (SIH26006)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+  :root{
+    --navy:#0A1F33;--panel:#0E2A47;--panel-2:#12335A;--line:#1D3E63;
+    --surface:#E8EDF2;--muted:#5B7089;--muted-d:#94A9C0;
+    --go:#1B9E5A;--caution:#E0A100;--risk:#D64545;--accent:#3B82C4;
+    --band:rgba(59,130,196,.18);
+    --font:'IBM Plex Sans',system-ui,sans-serif;--mono:'IBM Plex Mono',monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:var(--font);background:var(--navy);color:var(--surface);-webkit-font-smoothing:antialiased;line-height:1.45}
+  header{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;border-bottom:1px solid var(--line);background:var(--panel);flex-wrap:wrap;gap:10px}
+  .brand{display:flex;align-items:baseline;gap:12px}
+  .brand h1{font-size:18px;font-weight:700;letter-spacing:-.2px}
+  .brand .tag{font-size:12px;color:var(--muted-d);font-family:var(--mono)}
+  .live{display:flex;align-items:center;gap:7px;font-size:12px;color:var(--muted-d);font-family:var(--mono)}
+  .dot{width:8px;height:8px;border-radius:50%;background:var(--go);animation:pulse 2.2s infinite}
+  .dot.off{background:var(--risk);animation:none}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(27,158,90,.5)}70%{box-shadow:0 0 0 7px rgba(27,158,90,0)}100%{box-shadow:0 0 0 0 rgba(27,158,90,0)}}
+  .tabs{display:flex;gap:2px;background:var(--panel);padding:0 24px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+  .tab{padding:11px 16px;font-size:13.5px;color:var(--muted-d);background:none;border:none;border-bottom:2px solid transparent;cursor:pointer;font-family:var(--font)}
+  .tab.active{color:var(--surface);border-bottom-color:var(--accent)}
+  .tab:hover{color:var(--surface)}
+  .wrap{display:grid;grid-template-columns:300px 1fr;min-height:calc(100vh - 106px)}
+  .rail{background:var(--panel);border-right:1px solid var(--line);padding:20px}
+  .rail h2{font-size:12px;font-weight:600;color:var(--muted-d);margin-bottom:16px;font-family:var(--mono)}
+  .field{margin-bottom:15px}
+  .field label{display:block;font-size:13px;color:var(--muted-d);margin-bottom:6px}
+  .field select,.field input{width:100%;padding:9px 10px;background:var(--navy);border:1px solid var(--line);border-radius:6px;color:var(--surface);font-family:var(--font);font-size:14px}
+  .field select:focus,.field input:focus{outline:2px solid var(--accent);outline-offset:0}
+  .run{width:100%;margin-top:6px;padding:11px;background:var(--accent);color:#fff;border:none;border-radius:6px;font-family:var(--font);font-size:14px;font-weight:600;cursor:pointer;transition:background .15s}
+  .run:hover{background:#2E6FA8}.run:active{transform:translateY(1px)}
+  .run:disabled{opacity:.5;cursor:wait}
+  .rail-note{font-size:11px;color:var(--muted);margin-top:14px;line-height:1.5}
+  main{padding:22px 24px;overflow:auto}
+  .view{display:none}.view.active{display:block}
+  .banner{margin-bottom:16px;padding:11px 14px;border-radius:6px;font-size:13px;font-family:var(--mono);border:1px solid}
+  .banner.ok{background:rgba(27,158,90,.1);border-color:rgba(27,158,90,.4);color:var(--go)}
+  .banner.err{background:rgba(214,69,69,.1);border-color:rgba(214,69,69,.4);color:var(--risk)}
+  .verdict{border-radius:8px;padding:20px 22px;margin-bottom:18px;display:flex;align-items:center;gap:20px;border:1px solid;background:linear-gradient(135deg,rgba(27,158,90,.14),rgba(27,158,90,.04));border-color:rgba(27,158,90,.4)}
+  .verdict .icon{font-size:34px;line-height:1}
+  .verdict .v-main{flex:1}
+  .verdict .v-title{font-size:21px;font-weight:700;letter-spacing:-.3px;margin-bottom:3px}
+  .verdict .v-sub{font-size:14px;color:var(--muted-d)}
+  .verdict .v-metric{text-align:right}
+  .verdict .v-metric .n{font-family:var(--mono);font-size:24px;font-weight:600}
+  .verdict .v-metric .l{font-size:11px;color:var(--muted-d);font-family:var(--mono)}
+  .panels{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .panel{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:16px 18px}
+  .panel.wide{grid-column:1 / -1}
+  .panel h3{font-size:13px;font-weight:600;color:var(--muted-d);margin-bottom:14px;font-family:var(--mono);display:flex;justify-content:space-between;align-items:center;gap:8px}
+  .panel h3 .hint{font-weight:400;font-size:11px;color:var(--muted);text-align:right}
+  .chart-box{position:relative;height:230px}
+  .vessel-row{display:flex;align-items:center;gap:14px;padding:12px 0;border-bottom:1px solid var(--line)}
+  .vessel-row:last-child{border-bottom:none}
+  .vessel-row .badge{width:44px;height:44px;border-radius:6px;display:grid;place-items:center;font-weight:700;font-size:12px;font-family:var(--mono);flex-shrink:0}
+  .badge.pick{background:rgba(27,158,90,.16);color:var(--go);border:1px solid rgba(27,158,90,.5)}
+  .badge.ok{background:var(--panel-2);color:var(--muted-d);border:1px solid var(--line)}
+  .badge.no{background:rgba(214,69,69,.1);color:var(--risk);border:1px solid rgba(214,69,69,.35)}
+  .vessel-row .v-name{flex:1}
+  .vessel-row .v-name b{font-size:15px;font-weight:600;color:var(--surface)}
+  .vessel-row .v-name span{display:block;font-size:12px;color:var(--muted);margin-top:2px}
+  .vessel-row .v-cost{font-family:var(--mono);font-size:15px;text-align:right}
+  .vessel-row .v-cost span{display:block;font-size:11px;color:var(--muted)}
+  .flag{display:flex;gap:11px;padding:11px 0;border-bottom:1px solid var(--line);align-items:flex-start}
+  .flag:last-child{border-bottom:none}
+  .flag .fdot{width:9px;height:9px;border-radius:50%;margin-top:5px;flex-shrink:0}
+  .flag .ftext b{font-size:14px;font-weight:600}
+  .flag .ftext p{font-size:12.5px;color:var(--muted-d);margin-top:2px}
+  .lvl-go{background:var(--go)}.lvl-caution{background:var(--caution)}.lvl-risk{background:var(--risk)}
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border-radius:6px;overflow:hidden}
+  .stat{background:var(--panel);padding:13px 14px}
+  .stat .s-n{font-family:var(--mono);font-size:19px;font-weight:600}
+  .stat .s-l{font-size:11px;color:var(--muted);margin-top:3px}
+  table{width:100%;border-collapse:collapse;font-size:13px}
+  th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--line)}
+  th{font-family:var(--mono);font-size:11px;color:var(--muted-d);font-weight:600}
+  td{color:var(--surface)}
+  tr:hover td{background:var(--panel-2)}
+  .vbadge{font-family:var(--mono);font-size:10px;font-weight:600;padding:2px 7px;border-radius:3px}
+  .v-ok{background:rgba(27,158,90,.15);color:var(--go)}.v-chk{background:rgba(224,161,0,.15);color:var(--caution)}
+  .num{font-family:var(--mono)}
+  .idxgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+  .idxcard{background:var(--navy);border:1px solid var(--line);border-radius:6px;padding:13px 15px}
+  .idxcard .code{font-family:var(--mono);font-size:12px;color:var(--muted-d)}
+  .idxcard .val{font-family:var(--mono);font-size:22px;font-weight:600;margin:4px 0}
+  .idxcard .src{font-size:10.5px;color:var(--muted);line-height:1.3}
+  .idxcard .badge-live{display:inline-block;font-family:var(--mono);font-size:9px;font-weight:600;padding:1px 6px;border-radius:3px;margin-bottom:6px}
+  .bl-on{background:rgba(27,158,90,.15);color:var(--go)}.bl-off{background:rgba(224,161,0,.15);color:var(--caution)}
+  .idle-sugg{padding:12px 14px;background:var(--navy);border:1px solid var(--line);border-radius:6px;border-left:3px solid var(--accent)}
+  .idle-sugg b{font-size:13.5px}.idle-sugg p{font-size:12.5px;color:var(--muted-d);margin-top:3px}
+  .foot{margin-top:18px;font-size:11px;color:var(--muted);font-family:var(--mono);border-top:1px solid var(--line);padding-top:12px;line-height:1.6}
+  .spinner{color:var(--muted-d);font-family:var(--mono);font-size:13px;padding:20px 0;text-align:center}
+  @media(max-width:880px){.wrap{grid-template-columns:1fr}.rail{border-right:none;border-bottom:1px solid var(--line)}.panels{grid-template-columns:1fr}.verdict{flex-wrap:wrap}}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand"><h1>FreightScope</h1><span class="tag">SIH26006 · live backend</span></div>
+  <div class="live"><span class="dot" id="conn-dot"></span><span id="conn-text">connecting…</span></div>
+</header>
+<div class="tabs">
+  <button class="tab active" onclick="showView('advisor',this)">Chartering advisor</button>
+  <button class="tab" onclick="showView('indices',this)">Live indices</button>
+  <button class="tab" onclick="showView('congestion',this)">Port congestion</button>
+  <button class="tab" onclick="showView('coa',this)">Programme (COA)</button>
+  <button class="tab" onclick="showView('ports',this)">Port reference</button>
+</div>
+<div class="wrap">
+  <aside class="rail">
+    <h2>PLAN A CHARTER</h2>
+    <div class="field"><label for="cargo">Cargo</label>
+      <select id="cargo"><option>Coking coal</option><option>Thermal coal</option><option>Iron ore</option><option>Limestone</option></select></div>
+    <div class="field"><label for="tonnage">Parcel size (MT)</label><input id="tonnage" type="text" value="75,000"></div>
+    <div class="field"><label for="origin">Load port / region</label><select id="origin"></select></div>
+    <div class="field"><label for="dest">Discharge port</label><select id="dest"></select></div>
+    <div class="field"><label for="horizon">Contract horizon</label>
+      <select id="horizon"><option value="30">30 days</option><option value="60" selected>60 days</option><option value="90">90 days</option></select></div>
+    <div class="field"><label for="bunker">Bunker price scenario: $<span id="bunker-val">600</span>/t</label>
+      <input id="bunker" type="range" min="300" max="1000" step="25" value="600" style="width:100%;accent-color:var(--accent)" oninput="document.getElementById('bunker-val').textContent=this.value"></div>
+    <button class="run" id="runbtn" onclick="recommend()">Get recommendation</button>
+    <p class="rail-note">All figures fetched live from your local FreightScope API at <span id="apibase"></span>.</p>
+  </aside>
+  <main>
+    <!-- ADVISOR -->
+    <section class="view active" id="view-advisor">
+      <div id="advisor-body"><div class="spinner">Loading options from backend…</div></div>
+    </section>
+    <!-- INDICES -->
+    <section class="view" id="view-indices">
+      <div class="panel wide"><h3>Live freight indices <span class="hint">BRENT/WTI via FRED · BDI via BDRY ETF</span></h3>
+        <div class="idxgrid" id="idxgrid"><div class="spinner">Fetching…</div></div>
+        <p id="pq-note" style="font-size:12px;color:var(--muted-d);margin-top:14px;line-height:1.5"></p></div>
+    </section>
+    <!-- CONGESTION -->
+    <section class="view" id="view-congestion">
+      <div class="panel wide"><h3>Paradip port congestion <span class="hint">live from Daily Traffic Reports</span></h3>
+        <div id="cong-body"><div class="spinner">Fetching DTRs (may take ~20s)…</div></div></div>
+    </section>
+    <!-- COA PROGRAMME -->
+    <section class="view" id="view-coa">
+      <div class="panel wide"><h3>Programme planner — Contract of Affreightment <span class="hint">plan a tonnage target across voyages, not one enquiry</span></h3>
+        <div style="display:flex;gap:14px;flex-wrap:wrap;margin-bottom:14px;align-items:flex-end">
+          <div class="field" style="margin:0"><label>Total tonnage (MT)</label><input id="coa-total" type="text" value="450,000"></div>
+          <div class="field" style="margin:0"><label>Programme (months)</label><input id="coa-months" type="text" value="3"></div>
+          <button class="run" style="width:auto;padding:11px 20px" onclick="runCoa()">Plan programme</button>
+        </div>
+        <div id="coa-body"><p style="color:var(--muted-d);font-size:13px">Set a tonnage target and click Plan programme. Uses the current Load/Discharge/Cargo selection.</p></div>
+      </div>
+    </section>
+    <!-- PORTS -->
+    <section class="view" id="view-ports">
+      <div class="panel wide"><h3>East Coast discharge ports <span class="hint">verified constraints</span></h3>
+        <div style="overflow:auto"><table><thead><tr><th>Port</th><th>State</th><th>LOA</th><th>Beam</th><th>Draft (+tide)</th><th>Class</th><th>Tide / note</th><th>Verify</th></tr></thead>
+        <tbody id="port-tbody"><tr><td colspan="8" class="spinner">Fetching…</td></tr></tbody></table></div></div>
+    </section>
+  </main>
+</div>
+<script>
+// If opened via the backend (http://localhost:8000/) use same-origin; if opened
+// as a file, fall back to the explicit localhost URL.
+const API = (location.protocol==="http:"||location.protocol==="https:") ? "" : "http://localhost:8000";
+document.getElementById('apibase').textContent = API || "http://localhost:8000";
+let chart, PORTS={}, ORIGINS={};
+
+async function api(path){
+  const r = await fetch(API+path);
+  if(!r.ok) throw new Error(path+" → "+r.status);
+  return r.json();
+}
+function setConn(ok,msg){
+  document.getElementById('conn-dot').className = "dot"+(ok?"":" off");
+  document.getElementById('conn-text').textContent = msg;
+}
+
+async function boot(){
+  try{
+    const p = await api("/ports");
+    PORTS = p.ports; ORIGINS = p.origins;
+    const o=document.getElementById('origin'), d=document.getElementById('dest');
+    o.innerHTML = Object.keys(ORIGINS).map(k=>`<option>${k}</option>`).join('');
+    d.innerHTML = Object.keys(PORTS).map(k=>`<option>${k}</option>`).join('');
+    renderPortTable();
+    const idx = await api("/indices");
+    const live = Object.values(idx).filter(v=>v.live).length;
+    setConn(true, `connected · ${live}/${Object.keys(idx).length} series live`);
+    recommend();
+  }catch(e){
+    setConn(false,"backend offline");
+    document.getElementById('advisor-body').innerHTML =
+      `<div class="banner err">Can't reach the backend at ${API}.<br>
+       Start it: <b>uvicorn app:app --reload --port 8000</b>, then reload this page.</div>`;
+  }
+}
+
+async function recommend(){
+  const btn=document.getElementById('runbtn'); btn.disabled=true;
+  const dest=document.getElementById('dest').value;
+  const origin=document.getElementById('origin').value;
+  const cargo=document.getElementById('cargo').value;
+  const horizon=document.getElementById('horizon').value;
+  const parcel=(document.getElementById('tonnage').value||'75000').replace(/[^0-9]/g,'');
+  const bunker=document.getElementById('bunker').value;
+  const body=document.getElementById('advisor-body');
+  try{
+    const r = await api(`/recommend?origin=${encodeURIComponent(origin)}&dest=${encodeURIComponent(dest)}&cargo=${encodeURIComponent(cargo)}&horizon_days=${horizon}&parcel_mt=${parcel}&bunker_usd_per_t=${bunker}`);
+    renderAdvisor(r);
+    if(r.recommended_class){
+      const idxName = r.forecast.index.split(' ')[0];
+      const fc = await api(`/forecast?index=${idxName}&days=${Math.min(horizon,45)}`);
+      drawForecast(fc, r.recommended_class);
+    }
+  }catch(e){
+    body.innerHTML=`<div class="banner err">Request failed: ${e.message}</div>`;
+  }finally{ btn.disabled=false; }
+}
+
+function renderAdvisor(r){
+  const win = r.forecast && r.forecast.entry_window || {};
+  const pick = r.recommended_class;
+  const verdictClass = pick ? 'ok':'err';
+  const icon = pick ? '✓':'!';
+  const save = win.delta_pct!=null ? (win.delta_pct<0?`${win.delta_pct}%`:`+${win.delta_pct}%`) : '—';
+  const saveColor = (win.delta_pct||0)<=0 ? 'var(--go)':'var(--caution)';
+  const congestion = (r.dest==="Paradip"||r.dest==="Haldia");
+  const flags = [
+    ['lvl-caution','Rate volatility','Monitor the forecast band width before committing.'],
+    congestion?['lvl-risk','Congestion at '+r.dest,'Check the Port congestion tab for the live berth queue.']
+      :['lvl-go','Discharge port clear',r.dest+' not flagged for congestion.'],
+    ['lvl-go','Fuel cost tracked','Brent/WTI live from FRED feed into cost outlook.'],
+  ];
+  if(r.demurrage && r.demurrage.available){
+    const d=r.demurrage;
+    const lvl = d.risk_level==='high'?'lvl-risk':d.risk_level==='moderate'?'lvl-caution':'lvl-go';
+    flags.splice(1,0,[lvl,'Demurrage risk: '+d.risk_level,
+      `~${d.expected_wait_days}d expected wait at ${r.dest} → ~$${Number(d.demurrage_cost_usd).toLocaleString()} demurrage (${d.vessel_class} @ $${Number(d.demurrage_rate_usd_per_day).toLocaleString()}/day).`]);
+  }
+  if(r.port && r.port.advisory){
+    flags.push(['lvl-caution','Port note: '+r.dest, r.port.advisory]);
+  }
+  if(r.load_note){
+    flags.push(['lvl-caution','Load port: '+(r.origin.split('—')[0]||'').trim(), r.load_note]);
+  }
+  const vhtml = r.vessels.map(v=>{
+    const isPick=v.cls===pick, badge=isPick?'pick':(v.feasible?'ok':'no'), label=isPick?'PICK':(v.feasible?'OK':'N/A');
+    return `<div class="vessel-row"><div class="badge ${badge}">${label}</div>
+      <div class="v-name"><b>${v.cls}</b><span>${v.reason}</span></div>
+      <div class="v-cost">${v.feasible?'$'+(v.usd_per_t_modelled!=null?v.usd_per_t_modelled.toFixed(1):v.usd_per_t.toFixed(1)):'—'}<span>${v.feasible?'/t all-in':'infeasible'}</span></div></div>`;
+  }).join('');
+  document.getElementById('advisor-body').innerHTML = `
+    <div class="verdict" style="${pick?'':'border-color:rgba(214,69,69,.4);background:linear-gradient(135deg,rgba(214,69,69,.14),rgba(214,69,69,.04))'}">
+      <div class="icon">${icon}</div>
+      <div class="v-main"><div class="v-title">${r.verdict}</div>
+        <div class="v-sub">${r.origin} → ${r.dest} · ${r.cargo} · ~${r.transit_days} days transit</div></div>
+      <div class="v-metric">${r.saving && r.saving.saving_total_usd>0 ? `<div class="n" style="color:var(--go)">$${Number(r.saving.saving_total_usd).toLocaleString()}</div><div class="l">timing saving (this charter vs spot today)</div>` : `<div class="n" style="color:${saveColor}">${save}</div><div class="l">forecast low vs today</div>`}</div>
+    </div>
+    ${r.saving && r.saving.saving_total_usd>0 ? `<div class="stats" style="grid-template-columns:repeat(3,1fr);margin-bottom:18px">
+      <div class="stat"><div class="s-n">$${r.saving.spot_today_usd_per_t}/t</div><div class="s-l">Spot today (all-in)</div></div>
+      <div class="stat"><div class="s-n">$${r.saving.recommended_window_usd_per_t}/t</div><div class="s-l">Recommended window (all-in)</div></div>
+      <div class="stat"><div class="s-n" style="color:var(--go)">$${r.saving.saving_usd_per_t}/t · ${r.saving.saving_pct}%</div><div class="s-l">Timing saving on this parcel</div></div>
+    </div>` : ''}
+    <div class="panels">
+      <div class="panel wide"><h3><span id="fc-title">Freight rate forecast</span>
+        <span class="hint" id="fc-src">${r.forecast?r.forecast.source:''}</span></h3>
+        <div class="chart-box"><canvas id="fchart"></canvas></div></div>
+      <div class="panel"><h3>Vessel feasibility &amp; cost</h3>${vhtml}${splitPanel(r)}</div>
+      <div class="panel"><h3>Risk watch</h3>${flags.map(([l,t,p])=>`<div class="flag"><div class="fdot ${l}"></div><div class="ftext"><b>${t}</b><p>${p}</p></div></div>`).join('')}</div>
+      <div class="panel wide"><h3>Route snapshot <span class="hint">${r.origin.split('—')[1]?r.origin.split('—')[1].trim():r.origin} → ${r.dest}</span></h3>
+        <div class="stats">
+          <div class="stat"><div class="s-n">${r.distance_nm.toLocaleString()} nm</div><div class="s-l">Sea distance</div></div>
+          <div class="stat"><div class="s-n">~${r.transit_days} d</div><div class="s-l">Transit @ 13 kn</div></div>
+          <div class="stat"><div class="s-n">${pick||'—'}</div><div class="s-l">Recommended class</div></div>
+        </div></div>
+      ${matrixPanel(r)}
+      ${r.cost ? costPanel(r.cost) : ''}
+      ${r.idle ? idlePanel(r.idle) : ''}
+    </div>
+    <div class="foot">Live recommendation from FreightScope API. Feasibility uses verified port + load-port constraints. Cost is a transparent voyage estimate (TCE method). Forecast engine: ${r.forecast?r.forecast.engine:'n/a'}.</div>`;
+}
+
+function costPanel(c){
+  const b=c.breakdown, res=c.result, a=c.assumptions, inp=c.inputs;
+  const money=n=>'$'+Number(n).toLocaleString();
+  return `<div class="panel wide"><h3>Voyage cost breakdown — ${c.vessel_class}
+      <span class="hint">transparent TCE-method estimate · not a lookup</span></h3>
+    <div class="stats" style="grid-template-columns:repeat(4,1fr)">
+      <div class="stat"><div class="s-n">$${res.usd_per_tonne}/t</div><div class="s-l">All-in freight cost</div></div>
+      <div class="stat"><div class="s-n">${money(res.tce_per_day_usd)}</div><div class="s-l">TCE / day (vs OPEX ${money(res.opex_per_day_usd)})</div></div>
+      <div class="stat"><div class="s-n">${b.voyage_days} d</div><div class="s-l">Voyage (${b.sea_days}d sea + ${b.port_days}d port)</div></div>
+      <div class="stat"><div class="s-n">${money(res.total_charterer_cost_usd)}</div><div class="s-l">Total charterer cost</div></div>
+    </div>
+    <table style="margin-top:14px">
+      <thead><tr><th>Cost component</th><th>Basis</th><th style="text-align:right">USD</th></tr></thead>
+      <tbody>
+        <tr><td>Freight (${inp.freight_rate_usd_per_t}/t × ${Number(inp.cargo_mt).toLocaleString()} MT)</td><td>market rate × cargo</td><td class="num" style="text-align:right">${money(b.freight_cost_usd)}</td></tr>
+        <tr><td>Bunkers (${b.bunker_tonnes} t × $${inp.bunker_price_usd_per_t}/t)</td><td>${a.sea_cons_t_per_day}t/d sea, ${a.port_cons_t_per_day}t/d port @ ${a.speed_kn}kn</td><td class="num" style="text-align:right">${money(b.bunker_cost_usd)}</td></tr>
+        <tr><td>Port disbursements (both ends)</td><td>$${a.port_da_usd_each_end.toLocaleString()} each end</td><td class="num" style="text-align:right">${money(b.port_costs_usd)}</td></tr>
+        <tr><td>Broker commission (${a.commission_pct}%)</td><td>on freight</td><td class="num" style="text-align:right">${money(b.commission_usd)}</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:11.5px;color:var(--muted);margin-top:10px">Load ${a.load_rate_mt_day.toLocaleString()} MT/d · discharge ${a.discharge_rate_mt_day.toLocaleString()} MT/d · ${a.weather_allowance_pct}% weather allowance. Parameters are representative industry assumptions, shown so the figure is auditable, not a black box.</p>
+  </div>`;
+}
+
+function matrixPanel(r){
+  const feas=(r.vessels||[]).filter(v=>v.feasible && v.voyage);
+  if(feas.length<2) return '';   // matrix only useful with 2+ feasible classes
+  const money=n=>'$'+Number(n).toLocaleString();
+  const rows=feas.map(v=>{
+    const res=v.voyage.result, isPick=v.cls===r.recommended_class;
+    return `<tr${isPick?' style="background:rgba(27,158,90,.08)"':''}>
+      <td><b>${v.cls}</b>${isPick?' <span style="color:var(--go);font-size:11px">◄ pick</span>':''}</td>
+      <td class="num">$${res.usd_per_tonne}/t</td>
+      <td class="num">${money(res.tce_per_day_usd)}</td>
+      <td class="num">${v.voyage.breakdown.voyage_days} d</td>
+      <td class="num" style="text-align:right">${money(res.total_charterer_cost_usd)}</td></tr>`;
+  }).join('');
+  return `<div class="panel wide"><h3>Cost comparison — feasible classes
+      <span class="hint">side-by-side voyage economics</span></h3>
+    <table><thead><tr><th>Vessel class</th><th>$/t all-in</th><th>TCE/day</th><th>Voyage</th><th style="text-align:right">Total cost</th></tr></thead>
+    <tbody>${rows}</tbody></table>
+    <p style="font-size:11.5px;color:var(--muted);margin-top:10px">All feasible classes for this route/parcel, priced through the voyage-cost model. The pick is the lowest all-in \$/tonne.</p>
+  </div>`;
+}
+
+function splitPanel(r){
+  const so=(r.split_options||[]);
+  if(!so.length) return '';
+  const money=n=>'$'+Number(n).toLocaleString();
+  const rows=so.map(s=>{
+    const cheaper=s.cheaper;
+    const verdict=cheaper?`<span style="color:var(--go)">cheaper by ${money(Math.abs(s.vs_single_usd))}</span>`
+                         :`<span style="color:var(--muted-d)">+${money(s.vs_single_usd)} vs sizing up</span>`;
+    return `<div class="vessel-row"><div class="badge ${cheaper?'ok':'no'}" style="font-size:11px">SPLIT</div>
+      <div class="v-name"><b>${s.n_shipments} × ${s.cls}</b><span>${Number(s.per_shipment_mt).toLocaleString()}t each · ${verdict}</span></div>
+      <div class="v-cost">$${s.usd_per_t}/t<span>all-in</span></div></div>`;
+  }).join('');
+  return `<div style="margin-top:12px;padding-top:10px;border-top:1px dashed var(--line)">
+    <div style="font-size:12px;color:var(--muted-d);font-family:var(--mono);margin-bottom:6px">SPLIT vs SIZE-UP — parcel too big for these classes as one shipment:</div>
+    ${rows}
+    <p style="font-size:11px;color:var(--muted);margin-top:6px">Splitting into multiple smaller shipments vs. one ${so[0].single_ship_class||'larger vessel'} (${money(so[0].single_ship_usd_per_t? Math.round(so[0].single_ship_usd_per_t):0)}/t). Compares the real all-in cost of each route.</p>
+  </div>`;
+}
+
+function idlePanel(d){
+  const money=n=>'$'+Number(n).toLocaleString();
+  const rp=d.reposition;
+  return `<div class="panel wide"><h3>Idle &amp; repositioning — ${d.vessel_class}
+      <span class="hint">deliverable (c): idle-scenario management</span></h3>
+    <div class="stats" style="grid-template-columns:repeat(4,1fr)">
+      <div class="stat"><div class="s-n">${d.trough_count}</div><div class="s-l">Forecast soft-demand days</div></div>
+      <div class="stat"><div class="s-n">${money(d.idle_opex_per_day_usd)}</div><div class="s-l">Idle cost / day (OPEX)</div></div>
+      <div class="stat"><div class="s-n">${rp?rp.ballast_days+' d':'—'}</div><div class="s-l">${rp?'Ballast to alt. load region':'No reposition modelled'}</div></div>
+      <div class="stat"><div class="s-n">${rp?money(rp.total_ballast_cost_usd):'—'}</div><div class="s-l">Repositioning cost</div></div>
+    </div>
+    <div class="idle-sugg" style="margin-top:14px"><b>Recommendation</b><p>${d.guidance}</p></div>
+  </div>`;
+}
+
+function drawForecast(fc,pick){
+  const el=document.getElementById('fchart'); if(!el)return;
+  const labels=[...fc.hist_dates.slice(-60), ...fc.fc_dates];
+  const nH=fc.hist_dates.slice(-60).length;
+  const hist=[...fc.hist_values.slice(-60), ...Array(fc.fc_dates.length).fill(null)];
+  const bridge=fc.hist_values.slice(-1)[0];
+  const fcv=[...Array(nH-1).fill(null),bridge,...fc.fc_values];
+  const up=[...Array(nH-1).fill(null),bridge,...fc.fc_upper];
+  const lo=[...Array(nH-1).fill(null),bridge,...fc.fc_lower];
+  const hasXgb=fc.xgb_values&&fc.xgb_values.length===fc.fc_values.length;
+  const xgb=hasXgb?[...Array(nH-1).fill(null),bridge,...fc.xgb_values]:null;
+  const cs=getComputedStyle(document.documentElement);
+  const A=cs.getPropertyValue('--accent').trim(),B=cs.getPropertyValue('--band').trim();
+  const M=cs.getPropertyValue('--muted-d').trim(),G=cs.getPropertyValue('--line').trim();
+  const GO=cs.getPropertyValue('--go').trim();
+  document.getElementById('fc-title').textContent=`Freight rate forecast — ${pick} (${fc.index})`;
+  const srcEl=document.getElementById('fc-src'); if(srcEl&&hasXgb)srcEl.textContent='Prophet (blue) + XGBoost (green) · see /compare';
+  if(chart)chart.destroy();
+  const datasets=[
+    {data:up,borderWidth:0,pointRadius:0,fill:'+1',backgroundColor:B,tension:.3},
+    {data:lo,borderWidth:0,pointRadius:0,fill:false,tension:.3},
+    {data:hist,borderColor:A,borderWidth:2,pointRadius:0,tension:.3},
+    {data:fcv,borderColor:A,borderDash:[5,4],borderWidth:2,pointRadius:0,tension:.3}];
+  if(xgb)datasets.push({data:xgb,borderColor:GO,borderDash:[2,3],borderWidth:2,pointRadius:0,tension:.3});
+  chart=new Chart(el,{type:'line',data:{labels,datasets},
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},
+      tooltip:{callbacks:{label:c=>c.parsed.y!=null?c.parsed.y.toFixed(1):''},backgroundColor:'#0A1F33',borderColor:A,borderWidth:1}},
+      scales:{x:{grid:{color:G},ticks:{color:M,maxTicksLimit:8,font:{family:"'IBM Plex Mono'"}}},
+        y:{grid:{color:G},ticks:{color:M,font:{family:"'IBM Plex Mono'"}}}}}});
+}
+
+async function loadIndices(){
+  const g=document.getElementById('idxgrid');
+  try{
+    const idx=await api("/indices");
+    g.innerHTML=Object.entries(idx).map(([code,v])=>`
+      <div class="idxcard"><div class="badge-live ${v.live?'bl-on':'bl-off'}">${v.live?'LIVE':'SYNTHETIC'}</div>
+        <div class="code">${code}</div><div class="val">${v.latest.toLocaleString()}</div>
+        <div class="code" style="color:var(--muted)">as of ${v.as_of}</div>
+        <div class="src">${v.source}</div></div>`).join('');
+    // proxy quality note
+    try{
+      const pq=await api("/proxy_quality");
+      const note=document.getElementById('pq-note');
+      if(pq.available){
+        note.innerHTML=`<b>Proxy quality (BDRY vs BDI):</b> level correlation ${pq.level_correlation}, return correlation ${pq.return_correlation} over ${pq.overlap_days} days (${pq.window.from} → ${pq.window.to}). ${pq.interpretation}`;
+      }else{
+        note.innerHTML=`<b>Proxy quality:</b> ${pq.note}`;
+      }
+    }catch(e){}
+  }catch(e){ g.innerHTML=`<div class="banner err">Failed: ${e.message}</div>`; }
+}
+async function loadCongestion(){
+  const b=document.getElementById('cong-body');
+  try{
+    const c=await api("/congestion?days=10");
+    if(!c.series||!c.series.length){
+      b.innerHTML=`<div class="banner err">${c.source}. ${c.note||'Paradip site may be unreachable right now.'}</div>`; return;
+    }
+    const lvlColor=c.level==='high'?'var(--risk)':c.level==='moderate'?'var(--caution)':'var(--go)';
+    b.innerHTML=`<div style="margin-bottom:14px"><span style="font-family:var(--mono);font-size:22px;font-weight:600;color:${lvlColor}">${c.level.toUpperCase()}</span>
+      <span style="color:var(--muted-d);font-size:13px"> · avg congestion index ${c.avg_congestion} · latest ${c.latest.vessels_waiting} waiting / ${c.latest.vessels_working} working</span></div>
+      <div style="overflow:auto"><table><thead><tr><th>Date</th><th>Working</th><th>Waiting</th><th>Expected</th><th>Cargo (MT)</th><th>Congestion</th></tr></thead>
+      <tbody>${c.series.slice().reverse().map(r=>`<tr><td class="num">${r.date}</td><td class="num">${r.vessels_working}</td>
+        <td class="num">${r.vessels_waiting}</td><td class="num">${r.vessels_expected}</td>
+        <td class="num">${r.cargo_mt_today?r.cargo_mt_today.toLocaleString():'—'}</td><td class="num">${r.congestion_index}</td></tr>`).join('')}</tbody></table></div>
+      <div class="foot">Source: ${c.source}. Congestion index = vessels waiting ÷ vessels working.</div>`;
+  }catch(e){ b.innerHTML=`<div class="banner err">Failed: ${e.message}</div>`; }
+}
+function renderPortTable(){
+  document.getElementById('port-tbody').innerHTML=Object.entries(PORTS).map(([n,p])=>
+    `<tr><td><b>${n}</b></td><td>${p.state}</td><td class="num">${p.loa}</td><td class="num">${p.beam}</td>
+     <td class="num">${p.draft}${p.tidal_bonus>0?`<span style="color:var(--accent)"> +${p.tidal_bonus}</span>`:''}</td><td>${p.cls}</td>
+     <td style="font-size:12px">${p.tide_note||p.cargo}</td>
+     <td><span class="vbadge ${p.verified?'v-ok':'v-chk'}">${p.verified?'VERIFIED':'CONFIRM'}</span></td></tr>`).join('');
+}
+function showView(v,btn){
+  document.querySelectorAll('.view').forEach(e=>e.classList.remove('active'));
+  document.getElementById('view-'+v).classList.add('active');
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  btn.classList.add('active');
+  if(v==='indices')loadIndices();
+  if(v==='congestion')loadCongestion();
+}
+
+async function runCoa(){
+  const total=(document.getElementById('coa-total').value||'').replace(/[^0-9]/g,'');
+  const months=(document.getElementById('coa-months').value||'3').replace(/[^0-9]/g,'');
+  const origin=document.getElementById('origin').value;
+  const dest=document.getElementById('dest').value;
+  const cargo=document.getElementById('cargo').value;
+  const parcel=(document.getElementById('tonnage').value||'75000').replace(/[^0-9]/g,'');
+  const body=document.getElementById('coa-body');
+  body.innerHTML='<p class="spinner">Planning programme…</p>';
+  try{
+    const r=await api(`/coa?origin=${encodeURIComponent(origin)}&dest=${encodeURIComponent(dest)}&cargo=${encodeURIComponent(cargo)}&total_mt=${total}&months=${months}&parcel_mt=${parcel}`);
+    if(r.error){ body.innerHTML=`<div class="banner err">${r.error} ${r.hint||''}</div>`; return; }
+    const money=n=>'$'+Number(n).toLocaleString();
+    const rows=r.voyages.map(v=>`<tr><td class="num">${v.voyage}</td><td class="num">${v.target_window||'—'}</td>
+      <td class="num">${Number(v.parcel_mt).toLocaleString()}</td><td class="num">$${v.spotgo_rate_usd_per_t}/t</td>
+      <td class="num">$${v.forward_rate_usd_per_t}/t</td><td class="num" style="text-align:right">${money(v.forward_cost_usd)}</td></tr>`).join('');
+    const win=r.programme_saving_usd>0;
+    body.innerHTML=`
+      <div class="stats" style="grid-template-columns:repeat(4,1fr);margin-bottom:16px">
+        <div class="stat"><div class="s-n">${r.n_voyages} × ${r.vessel_class}</div><div class="s-l">Voyages of ${Number(r.per_voyage_mt).toLocaleString()} MT</div></div>
+        <div class="stat"><div class="s-n">${money(r.forward_cover_cost_usd)}</div><div class="s-l">Forward-cover (lock today)</div></div>
+        <div class="stat"><div class="s-n">${money(r.spot_as_you_go_cost_usd)}</div><div class="s-l">Spot-as-you-go (forecast)</div></div>
+        <div class="stat"><div class="s-n" style="color:${win?'var(--go)':'var(--caution)'}">${money(Math.abs(r.programme_saving_usd))} · ${Math.abs(r.saving_pct)}%</div><div class="s-l">${win?'Programme saving (COA vs spot-as-you-go)':'Programme saving (staging vs forward)'}</div></div>
+      </div>
+      <div class="idle-sugg" style="margin-bottom:16px"><b>Recommended strategy</b><p>${r.recommended_strategy}</p></div>
+      <table><thead><tr><th>Voyage</th><th>Delivery slot</th><th>Parcel MT</th><th>Spot-go rate</th><th>Forward rate</th><th style="text-align:right">Forward cost</th></tr></thead>
+      <tbody>${rows}</tbody></table>
+      <p style="font-size:11.5px;color:var(--muted);margin-top:10px">${r.basis}. This is the spot→multi-voyage COA shift the problem statement calls for, with real economics.</p>`;
+  }catch(e){ body.innerHTML=`<div class="banner err">Failed: ${e.message}</div>`; }
+}
+boot();
+</script>
+</body>
+</html>
