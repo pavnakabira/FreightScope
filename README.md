@@ -60,16 +60,16 @@ const data = await r.json();
 ```
 Run the backend first (port 8000), then open the dashboard from a local server (not file://) so the browser allows the request. CORS is already enabled on the backend.
 
-## Model comparison — the honest bit judges respect
+## Model comparison 
 The `/compare` endpoint runs a **walk-forward backtest** (no lookahead) scoring three models on the same held-out days:
 - **Naive** (tomorrow = today) — the baseline every model must beat.
 - **Prophet** — good for trend + seasonality; gives confidence bands.
 - **XGBoost** — lag/rolling/calendar features; usually best on short daily horizons.
 
-**Expect no universal winner.** On smooth trending series XGBoost beats naive by a few %; on noisy random-walk series, naive is hard to beat and Prophet can overfit. That's a real, defensible finding — present it as "we tested, and we ship the model that wins *for this index and horizon*," not "our model is magic." Run `python forecasting.py` to see the backtest table offline.
+
 
 ## Next steps to strengthen it
-1. Add the **Paradip Daily Traffic Report scraper** as a congestion feature (real berth-queue signal).
-2. Add **commodity price** (World Bank Pink Sheet) as an exogenous regressor in Prophet.
-3. Swap the cost function's flat `usd_per_t` for a real freight + idle + deadhead calc.
-4. Add an **XGBoost** model alongside Prophet and show the baseline-vs-advanced comparison judges like.
+1. Adding the **Paradip Daily Traffic Report scraper** as a congestion feature (real berth-queue signal).
+2. Adding **commodity price** (World Bank Pink Sheet) as an exogenous regressor in Prophet.
+3. Swapping the cost function's flat `usd_per_t` for a real freight + idle + deadhead calc.
+4. Adding an **XGBoost** model alongside Prophet and show the baseline-vs-advanced comparison.
