@@ -9,7 +9,7 @@ FastAPI service that serves **real** freight forecasts and vessel-port feasibili
 - Applies the **verified port + vessel feasibility** logic (same constraints as the workbook).
 - Computes the **best entry window** (lowest forecast day in the horizon) and a plain-English verdict.
 
-## Data sources — the honest picture
+## Data sources
 The true **Baltic Dry Index is licensed** by the Baltic Exchange; there is no free live API for the index itself. So the data layer uses real *proxies* that are free and live, in three tiers:
 1. **Live, free, citable:**
    - **BDRY ETF** (Breakwave Dry Bulk Shipping ETF) via Yahoo Finance — holds Baltic freight futures, so it **tracks the BDI closely**. Used as the live Baltic signal. `BDI` maps to it directly; `BCI/BPI/BSI/BHSI` are *scaled approximations* of it (the ETF doesn't split out sub-indices — the source label says "scaled to X" to flag this).
@@ -46,7 +46,7 @@ Open **http://localhost:8000/docs** for the interactive API (Swagger UI) — you
 | `/recommend` | `/recommend?origin=Australia — Hay Point&dest=Paradip&cargo=Coking coal` | full recommendation: feasible vessels, pick, forecast, verdict |
 | `/ports` | | verified port constraint table |
 
-## Important notes for the demo
+## Notes
 - **The forecast is real** when Stooq is reachable. If it isn't (some networks/firewalls block it), the service automatically falls back to a **deterministic synthetic series** and *says so* in the `source` field — it never crashes. Check the `source` string to know which you're showing.
 - **Sub-index scaling is a proxy.** Stooq reliably serves the BDI composite; we scale it to BCI/BPI/etc. with fixed ratios. For a stronger submission, replace `SUBINDEX_TO_BALTIC` with real per-index data if you can source it (e.g. a paid Baltic feed, or scraped daily values from HandyBulk).
 - **Prophet warning about history length** is expected and harmless — we feed ~180 days deliberately for speed.
